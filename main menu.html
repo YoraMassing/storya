@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>STORYA FUN AND LEARNING</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">STORYA</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li> <!-- membuat main menu -->
+                <li><a href="#">About</a></li>
+                <li><a href="#sec">Learn</a></li>
+                <li><a href="#">Game</a></li>
+                <li><a href="#">Story</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="star">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text" >STORYA FUN & LEARNING</h2> <!--judul web-->
+            <a href="#" id="btn">EXPLORE</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Let's Learn Something New Today!</h2>
+            <div class="links-countainer">
+                <li><a href="#">Math Class 1</a></li>
+                <li><a href="#">Math Class 2</a></li>
+                <li><a href="#">Math Class 3</a></li>
+                <li><a href="#">Math Class 4</a></li>
+                <li><a href="#">Math Class 5</a></li>
+                <li><a href="#">Math Class 6</a></li>
+                <li><a href="#">Math Class 7</a></li>
+                <li><a href="#">Math Class 8</a></li>
+                <li><a href="#">Math Class 9</a></li>
+                <li><a href="#">Math Class 10</a></li>
+                <li><a href="#">Math Class 11</a></li>
+                <li><a href="#">Math Class 12</a></li>
+            </div>
+        </div>
+        
+        <script>
+            let star = document.getElementById('star');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+
+            window.addEventListener('scroll',function(){
+                let value = window.scrollY;
+                star.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.05 + 'px';  
+            })
+            /*star.style.left = membuat gambar bintang bergeser dari kiri ke kanan
+            moon.style.top = membuat gambar bulan bergeser dari atas ke bawah*/
+        </script>
+    </body>
+</html>

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', 'sans-serif';
+    scroll-behavior: smooth;
+}
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#2b1055, #7597de);
+        /* warna background gradasi dua warna linear
+     min-height 100vh membuat gradasi cuma masing2 satu warna
+     makin kecil min-height makin banyak jumlah gradasinya
+     kalo 50vh nanti gradasinya dua kali
+     */ 
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    /* 30px jarak menu dari atas (makin gede angkanya, makin turun tulisan menu, dkknya)
+     100p jarak menu dari sisi kanan (makin gede angkanya, makin ke kiri tulisan menu, dkk)
+     */ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    /* z-index membuat header/tombol2 atas selalu di depan
+    shg gambar2 tidak menutupi/menghalangi cursor
+*/
+}
+header .logo
+/* yang akan diatur adalah tulisan logo
+*/
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* color mengatur warna, font-weight mengatur ketebalan tulisan (cek bagian import),
+    text-decoration memberi dekorasi garis bawah pada text, font-size mengatur ukuran font,
+    text-transform mengatur apakah tulisan logo huruf besar semua/tdk
+    letter-spacing mengatur jarak antar huruf
+     */
+}
+header ul
+/* yang akan diatur adalah tulisan yg diapit oleh ul (home, contact, dkk)
+*/ 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/* tampilan tulisan yg diapit oleh ul (home, contact, dkk)
+*/ 
+}
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+/* margin-left = jarak antar baris (home ke learn, dll) sisi kiri
+*/
+}
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 20px;
+/* padding: wilayah text tombol (lebar 6px dan panjang 15px)
+border-radius ; bikin kotak melengkung di ujungnya
+*/
+}
+header ul li a:hover ,
+header ul li a.active
+/* membuat tombol yang ada active nya (menu) terus tampil 
+*/
+{
+    background: #fff;
+    color: #2b1055;
+/* efek kalo cursor menyentuh tombol
+perubahan warna background sekitar dan warna tulisan
+*/
+}
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/* justify-content dan alight items (?)
+membuat semua item (gambar dan teks di tengah)
+*/
+}
+section::before
+/* untuk menyatuan warna bagian section
+dengan bagian bawah (yg ada gambar dengan daftar
+tombol di bawah)
+*/
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#1c0522,transparent);
+/* gradient dari bawah ke atas
+dari warna biru tua menuju transparant
+*/
+    z-index: 1000;
+}
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+/* pointer events membuat
+ketika di arahkan kursor ke bagian explore
+jadi berubah ke bentuk gambar sama kek
+tombol2 di header/atas (blm tau apa relevansinya
+karena letak coding ini bukan di bagian tombol
+explore tp di img
+*/
+}
+section img#moon
+{
+    mix-blend-mode: screen;
+/* membuat gambar bulan
+jadi mode screen (nyaru jadi background
+dan bukan gambar di depan jadi
+ga ganggu/didepan tombol)
+*/
+}
+section img#mountains_front
+{
+    z-index: 10;
+/* bikin tulisan judul di belakang
+gambar mountains_front
+*/
+}
+#text
+/* ngedit teks judul
+*/
+{
+    position: absolute;
+/* lokasi tetap/absolut
+*/
+    color: #fff;
+    white-space: nowrap;
+    font-size: 6vw;
+    z-index: 9;
+/* font-size: 1.5em bikin tulisannya lebih kecil
+kalo bagian itu dihilangin tulisannya jadi lebih gede
+(7.5vw kegedean jadinya pake 6vw aja. hehehe)
+*/
+}
+#btn
+/* ngedit teks dengan id btn
+kalo id diganti class nanti font, color, dan background
+g bisa sesuai dgn coding edit di bawah ini
+*/
+{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background-color: #fff;
+    color: #2b1055;
+    font-size: 1.3em;
+    z-index: 9;
+    transform: translateY(100px);
+/* z-index sama dengan #text
+transform memindahkan posisi tulisan 100px ke bawah
+kalo dibuat -100px nanti tulisannya malah ke atas
+*/
+}
+.sec
+{
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+.sec h2
+{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.links-countainer li a
+{
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #fff;
+    color: #2b1055;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
